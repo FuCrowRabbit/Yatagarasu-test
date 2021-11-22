@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  httpd:
+    image: httpd:2.4
+    hostname: test.docker.localhost
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www/html
+      - ./_docker/apache2/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./_docker/apache2/conf.modules.d:/usr/local/apache2/conf.modules.d
+      - ./_docker/apache2/conf.sites.d:/usr/local/apache2/conf.sites.d
+    working_dir: /var/www/html
+    environment:
+      TZ: Asia/Tokyo
+
+  node:
+    image: node:16
+    tty: true
+    working_dir: /var/www/html
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      NODE_CONFIG_DIR: /var/www/html/config

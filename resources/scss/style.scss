@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@use "variables";
+
+:root {
+    --black: #000;
+    --red: #F00;
+    --font-default: #{variables.$font-default};
+}
+
+main {
+    font-family: var(--font-default);
+    color: var(--black);
+    @media screen and (max-width: 100em) {
+        color: var(--red);
+    }
+}

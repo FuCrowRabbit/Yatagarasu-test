@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "yatagarasu-test",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:FuCrowRabbit/Yatagarasu-test.git"
+  },
+  "scripts": {
+    "dev": "yatagarasu scss",
+    "prod": "yatagarasu scss prod",
+    "watch": "yatagarasu scss watch",
+    "stylelint": "yatagarasu scss stylelint"
+  },
+  "dependencies": {
+    "postcss": "^8.3.11",
+    "postcss-scss": "^4.0.2",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.0.0",
+    "yatagarasu": "https://github.com/FuCrowRabbit/Yatagarasu.git"
+  }
+}
